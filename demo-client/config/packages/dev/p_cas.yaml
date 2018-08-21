@@ -1,5 +1,5 @@
 parameters:
-   pcas_base_url: "http://127.0.0.1:8001"
+   pcas_base_url: "http://pcas-server:8080/demo-server/public"
 
 services:
    pcas.pcas_factory:

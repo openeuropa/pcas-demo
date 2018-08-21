@@ -16,7 +16,7 @@ class DefaultController extends Controller
    * Get a PcasFactory instance.
    * @return PCasFactory
    */
-    protected function getPcasFactory()
+    public function getPcasFactory()
     {
       if (null === $this->pCasFactory) {
         $this->pCasFactory = $this->container->get('pcas.pcas_factory');
@@ -43,19 +43,20 @@ class DefaultController extends Controller
 
     public function defaultVars(pCas $pCas, Request $request = null)
     {
+        $base_url = $request->getBaseUrl();
         if ($user = $pCas->getAuthenticatedUser()) {
-            $name = is_null($user->get('cas:firstName')) ? $user->get('cas:user') : $user->get('cas:firstName') . ' ' . ucfirst(strtolower($user->get('cas:lastName')));
+            $name = (null === $user->get('cas:firstName')) ? $user->get('cas:user') : $user->get('cas:firstName') . ' ' . ucfirst(strtolower($user->get('cas:lastName')));
 
             $welcome = sprintf('Welcome back, %s !', $name);
             $link = [
-                'href'  => '/logout',
+                'href'  => $base_url . '/logout',
                 'text'  => 'Log out',
                 'class' => 'btn btn-danger btn-lg btn-block',
             ];
         } else {
             $welcome = "Welcome, guest !";
             $link = [
-                'href'  => '/login',
+                'href'  => $base_url . '/login',
                 'text'  => 'Log in',
                 'class' => 'btn btn-success btn-lg btn-block',
             ];

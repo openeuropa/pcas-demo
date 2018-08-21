@@ -23,3 +23,4 @@ composer.lock
 /demo/vendor/
 /demo/web/bundles/
 /log/
+docker-compose.yml
