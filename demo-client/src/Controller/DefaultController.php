@@ -2,20 +2,36 @@
 namespace App\Controller;
 
 use OpenEuropa\pcas\PCas;
+use OpenEuropa\pcas\PCasFactory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    /**
+    /** @var \openeuropa\pcas\PCasFactory */
+    private $pCasFactory;
+
+  /**
+   * Get a PcasFactory instance.
+   * @return PCasFactory
+   */
+    protected function getPcasFactory()
+    {
+      if (null === $this->pCasFactory) {
+        $this->pCasFactory = $this->container->get('pcas.pcas_factory');
+      }
+
+      return $this->pCasFactory;
+    }
+
+  /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
-        $pCas->setSession($request->getSession());
+        $pCas = $this->getPcasFactory()->getPCas();
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [

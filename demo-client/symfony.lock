@@ -17,11 +17,29 @@
     "doctrine/common": {
         "version": "v2.8.1"
     },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
+    },
     "doctrine/inflector": {
         "version": "v1.2.0"
     },
     "doctrine/lexer": {
         "version": "v1.0.1"
+    },
+    "doctrine/persistence": {
+        "version": "v1.0.0"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
+    },
+    "easycorp/easy-log-handler": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
+        }
     },
     "guzzlehttp/guzzle": {
         "version": "6.3.0"
@@ -34,6 +52,9 @@
     },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "nikic/php-parser": {
+        "version": "v4.0.3"
     },
     "openeuropa/pcas": {
         "version": "dev-master"
@@ -128,6 +149,9 @@
             "ref": "de31e687f3964939abd1f66817bd96ed34bc2eee"
         }
     },
+    "symfony/debug-pack": {
+        "version": "v1.0.6"
+    },
     "symfony/dependency-injection": {
         "version": "v3.3.11"
     },
@@ -170,6 +194,15 @@
     "symfony/inflector": {
         "version": "v3.3.11"
     },
+    "symfony/maker-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
     "symfony/monolog-bridge": {
         "version": "v4.0.9"
     },
@@ -185,6 +218,9 @@
     "symfony/options-resolver": {
         "version": "v3.3.11"
     },
+    "symfony/polyfill-ctype": {
+        "version": "v1.9.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
     },
@@ -193,6 +229,9 @@
     },
     "symfony/process": {
         "version": "v3.3.11"
+    },
+    "symfony/profiler-pack": {
+        "version": "v1.0.3"
     },
     "symfony/property-access": {
         "version": "v3.3.11"
