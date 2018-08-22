@@ -43,7 +43,7 @@ Now, the two applications will be running at:
 * Server: http://pcas-server:8080/demo-server/public
 
 You can also test it against ECAS, the authentication service from European Commission by updating the file ```.env``` in
-```demo-client``` directory. If this file doesn't exists, you can create it from ```.env.dist```.
+```demo-client``` directory. If this file does not exist, you can create it from ```.env.dist```.
 
 The file must contains:
 
