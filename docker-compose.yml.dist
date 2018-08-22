@@ -1,5 +1,12 @@
 version: '2'
 services:
+  pcas-demo:
+    image: fpfis/httpd-php-dev:7.1
+    working_dir: /var/www/html
+    volumes:
+    - .:/var/www/html # Non Mac users.
+    # - nfsmount:/var/www/html # Mac Users with the nfsmount volume.
+
   pcas-server:
     image: fpfis/httpd-php-dev:7.1
     working_dir: /var/www/html/demo-server
