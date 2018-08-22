@@ -11,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * @todo: Fix complexity warning.
+ * @SuppressWarnings(PHPMD)
+ */
 class LoginController extends Controller
 {
     /**
@@ -27,7 +31,7 @@ class LoginController extends Controller
             $user = $request->getSession()->get('user');
         }
 
-        if ('true' === $request->get('renew', 'false') || is_null($user) || !isset($users[$user])) {
+        if ('true' === $request->get('renew', 'false') || $user === null || !isset($users[$user])) {
             $form = $this->createFormBuilder()
                 ->add('user', TextType::class)
                 ->add('nickname', TextType::class)
@@ -37,7 +41,6 @@ class LoginController extends Controller
                 ))
                 ->add('submit', SubmitType::class, array('label' => 'Submit'))
                 ->getForm();
-
         } else {
             $form = $this->createFormBuilder()
                 ->add('password', PasswordType::class)
@@ -54,7 +57,7 @@ class LoginController extends Controller
             $query = array_merge($query, $form->getData());
             $user = $request->getSession()->get('user');
 
-            if ('true' === $request->get('renew', 'false') || is_null($user) || !isset($users[$user])) {
+            if ('true' === $request->get('renew', 'false') || $user === null || !isset($users[$user])) {
                 $users[$query['ticket']] = [
                     'data' => $form->getData(),
                     'auth' => 0,
@@ -127,5 +130,4 @@ class LoginController extends Controller
 
         return $return;
     }
-
 }

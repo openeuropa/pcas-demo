@@ -16,15 +16,15 @@
 <body>
 <div class="container">
     <div id="welcome">
-        <h1>pCAS library version {{ version }}</h1>
+        <h1>pCAS library latest version <img src="https://img.shields.io/packagist/v/openeuropa/pcas.svg" alt="VERSION EMPTY"/></h1>
     </div>
 
     <nav class="nav">
-        <a class="nav-link" href="/">Homepage</a>
-        <a class="nav-link" href="/page/simple">Simple page</a>
-        <a class="nav-link" href="/page/restricted">Restricted page</a>
-        <a class="nav-link" href="/page/forcelogin">Force login page.</a>
-        <a class="nav-link" href="/page/forcelogout">Logout</a>
+        <a class="nav-link" href="{{ path('homepage') }}">Homepage</a>
+        <a class="nav-link" href="{{ path('page_simple') }}">Simple page</a>
+        <a class="nav-link" href="{{ path('page_restricted') }}">Restricted page</a>
+        <a class="nav-link" href="{{ path('page_forcelogin') }}">Force login page.</a>
+        <a class="nav-link" href="{{ path('page_forcelogout') }}">Logout</a>
     </nav>
 
     <div class="jumbotron">

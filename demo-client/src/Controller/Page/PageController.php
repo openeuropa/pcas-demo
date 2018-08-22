@@ -7,6 +7,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @todo: Remove this after following issue is resolved.
+ * @link https://webgate.ec.europa.eu/CITnet/jira/browse/OPENEUROPA-792
+ * @SuppressWarnings(PHPMD.LongVariable)
+ */
 class PageController extends DefaultController
 {
     /**
@@ -15,7 +20,7 @@ class PageController extends DefaultController
     public function pageSimpleAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
+        $pCas = $this->getPcasFactory()->getPCas();
 
         // replace this example code with whatever you need
         return $this->render('page/simple.html.twig', [
@@ -29,7 +34,7 @@ class PageController extends DefaultController
     public function pageRestrictedAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
+        $pCas = $this->getPcasFactory()->getPCas();
 
         if ($response = $pCas->login()) {
             $httpFoundationFactory = new HttpFoundationFactory();
@@ -49,7 +54,7 @@ class PageController extends DefaultController
     public function pageForceLoginAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
+        $pCas = $this->getPcasFactory()->getPCas();
 
         if ($response = $pCas->renewLogin()) {
             return (new HttpFoundationFactory())->createResponse($response);
@@ -67,7 +72,7 @@ class PageController extends DefaultController
     public function pageGatewayLoginAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
+        $pCas = $this->getPcasFactory()->getPCas();
 
         if ($response = $pCas->gatewayAuthentication()) {
             return (new HttpFoundationFactory())->createResponse($response);
@@ -85,7 +90,7 @@ class PageController extends DefaultController
     public function pageForceLogoutAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
+        $pCas = $this->getPcasFactory()->getPCas();
 
         $query = [];
 

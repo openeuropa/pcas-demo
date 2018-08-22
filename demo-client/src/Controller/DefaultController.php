@@ -2,20 +2,36 @@
 namespace App\Controller;
 
 use OpenEuropa\pcas\PCas;
+use OpenEuropa\pcas\PCasFactory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    /**
+    /** @var \openeuropa\pcas\PCasFactory */
+    private $pCasFactory;
+
+  /**
+   * Get a PcasFactory instance.
+   * @return PCasFactory
+   */
+    public function getPcasFactory()
+    {
+        if (null === $this->pCasFactory) {
+            $this->pCasFactory = $this->container->get('pcas.pcas_factory');
+        }
+
+        return $this->pCasFactory;
+    }
+
+  /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
-        $pCas->setSession($request->getSession());
+        $pCas = $this->getPcasFactory()->getPCas();
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
@@ -27,19 +43,20 @@ class DefaultController extends Controller
 
     public function defaultVars(pCas $pCas, Request $request = null)
     {
+        $base_url = $request->getBaseUrl();
         if ($user = $pCas->getAuthenticatedUser()) {
-            $name = is_null($user->get('cas:firstName')) ? $user->get('cas:user') : $user->get('cas:firstName') . ' ' . ucfirst(strtolower($user->get('cas:lastName')));
+            $name = (null === $user->get('cas:firstName')) ? $user->get('cas:user') : $user->get('cas:firstName') . ' ' . ucfirst(strtolower($user->get('cas:lastName')));
 
             $welcome = sprintf('Welcome back, %s !', $name);
             $link = [
-                'href'  => '/logout',
+                'href'  => $base_url . '/logout',
                 'text'  => 'Log out',
                 'class' => 'btn btn-danger btn-lg btn-block',
             ];
         } else {
             $welcome = "Welcome, guest !";
             $link = [
-                'href'  => '/login',
+                'href'  => $base_url . '/login',
                 'text'  => 'Log in',
                 'class' => 'btn btn-success btn-lg btn-block',
             ];

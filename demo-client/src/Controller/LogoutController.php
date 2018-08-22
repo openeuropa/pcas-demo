@@ -15,7 +15,7 @@ class LogoutController extends DefaultController
     public function indexAction(Request $request)
     {
         /** @var \OpenEuropa\pcas\PCas $pCas */
-        $pCas = $this->container->get('pcas');
+        $pCas = $this->getPcasFactory()->getPCas();
 
         $query['service'] = $this->generateUrl(
             'homepage',

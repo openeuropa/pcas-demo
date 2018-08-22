@@ -33,7 +33,7 @@ services:
 
     pcas.PCasGuardAuthenticator:
           class: OpenEuropa\pcas\Security\PCasGuardAuthenticator
-          arguments: ['@pcas']
+          arguments: ['@pcas.pcas_factory']
 
     pcas.PCasUserProvider:
           class: OpenEuropa\pcas\Security\Core\User\PCasUserProvider

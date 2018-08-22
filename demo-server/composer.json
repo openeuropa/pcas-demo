@@ -1,9 +1,8 @@
 {
     "type": "project",
-    "license": "proprietary",
     "require": {
         "php": "^7.0.8",
-        "OpenEuropa/pcas": "dev-master",
+        "openeuropa/pcas": "dev-master",
         "guzzlehttp/psr7": "^1.4",
         "php-http/guzzle6-adapter": "^1.1",
         "sensio/framework-extra-bundle": "^5.0",
@@ -18,11 +17,11 @@
         "symfony/validator": "^4.0",
         "symfony/web-profiler-bundle": "^4.0",
         "symfony/web-server-bundle": "^4.0",
+        "symfony/flex": "^1.0",
         "symfony/yaml": "^4.0",
         "twig/extensions": "^1.5"
     },
     "require-dev": {
-        "symfony/flex": "^1.0",
         "symfony/dotenv": "^4.0"
     },
     "config": {
@@ -44,7 +43,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
