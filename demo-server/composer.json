@@ -1,9 +1,8 @@
 {
     "type": "project",
-    "license": "proprietary",
     "require": {
         "php": "^7.0.8",
-        "openeuropa/pcas": "dev-OPENEUROPA-1171",
+        "openeuropa/pcas": "dev-master",
         "guzzlehttp/psr7": "^1.4",
         "php-http/guzzle6-adapter": "^1.1",
         "sensio/framework-extra-bundle": "^5.0",

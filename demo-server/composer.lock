@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26d53df26353e47905f24b9a8709d429",
+    "content-hash": "1054b259e4808d4d3c2a0e30a68c5ae0",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -882,16 +882,16 @@
         },
         {
             "name": "openeuropa/pcas",
-            "version": "dev-OPENEUROPA-1171",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/pcas.git",
-                "reference": "47c9fefa8d656993f8d7c6780b8f76b57db1bd73"
+                "reference": "01955d250e48553ac0757f1447622793d0c68cd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/pcas/zipball/47c9fefa8d656993f8d7c6780b8f76b57db1bd73",
-                "reference": "47c9fefa8d656993f8d7c6780b8f76b57db1bd73",
+                "url": "https://api.github.com/repos/openeuropa/pcas/zipball/01955d250e48553ac0757f1447622793d0c68cd8",
+                "reference": "01955d250e48553ac0757f1447622793d0c68cd8",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +929,7 @@
                 "EUPL-1.2"
             ],
             "description": "pCas, a PHP CAS library",
-            "time": "2018-08-21T07:25:31+00:00"
+            "time": "2018-08-22T09:06:54+00:00"
         },
         {
             "name": "php-http/client-common",
