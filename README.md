@@ -4,8 +4,8 @@
 
 The demo contains two independent Symfony applications:
 
-* demo-client: A basic web app that can authenticate to a CAS server to access specific pages.
-* demo-server: A basic CAS server.
+* [`demo-client`](./demo-client): A basic web app that can authenticate to a CAS server to access specific pages.
+* [`demo-server`](./demo-server): A basic CAS server.
 
 In order to test pCAS library, you must set these applications locally.
 
@@ -25,8 +25,14 @@ Run the `docker-compose up -d`
 Install the composer dependencies of the applications:
 
 ```
-docker-compose exec pcas-client composer install
-docker-compose exec pcas-server composer install
+docker-compose exec pcas-demo composer install
+```
+
+When updating the applications you can run `composer update` in their directories separately:
+
+```
+docker-compose exec pcas-client composer update
+docker-compose exec pcas-server composer update
 ```
 
 ### Step 3: Hosts
