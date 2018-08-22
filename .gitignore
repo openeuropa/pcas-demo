@@ -4,7 +4,6 @@ certificates/*
 ecasclient.log
 **/Properties/config.json
 /vendor
-composer.lock
 /demo/.web-server-pid
 /demo/app/config/parameters.yml
 /demo/build/
@@ -24,3 +23,4 @@ composer.lock
 /demo/web/bundles/
 /log/
 docker-compose.yml
+grumphp.yml

@@ -1,0 +1,23 @@
+{
+  "name": "openeuropa/pcas-demo",
+  "description": "Demo sites for the pCAS library.",
+  "type": "project",
+  "license": "EUPL-1.2",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "openeuropa/code-review": "~1.0@alpha"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "composer --working-dir=demo-client install",
+      "composer --working-dir=demo-server install"
+    ]
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "7.1.9"
+    }
+  }
+}
