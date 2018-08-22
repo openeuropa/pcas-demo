@@ -7,6 +7,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @todo: Remove this after following issue is resolved.
+ * @link https://webgate.ec.europa.eu/CITnet/jira/browse/OPENEUROPA-792
+ * @SuppressWarnings(PHPMD.LongVariable)
+ */
 class PageController extends DefaultController
 {
     /**

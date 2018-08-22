@@ -1,0 +1,28 @@
+imports:
+  - { resource: vendor/openeuropa/code-review/dist/library-conventions.yml }
+parameters:
+  tasks.phpcs.ignore_patterns:
+    - demo-client/bin/
+    - demo-client/config/
+    - demo-client/public/
+    - demo-client/templates/
+    - demo-client/templates/
+    - demo-client/var/
+    - demo-client/vendor/
+
+    - demo-server/bin/
+    - demo-server/config/
+    - demo-server/public/
+    - demo-server/templates/
+    - demo-server/templates/
+    - demo-server/var/
+    - demo-server/vendor/
+
+    - vendor/
+
+  tasks.phpcs.triggered_by:
+    - php
+    - module
+    - inc
+    - module
+    - install

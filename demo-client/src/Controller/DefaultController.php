@@ -18,11 +18,11 @@ class DefaultController extends Controller
    */
     public function getPcasFactory()
     {
-      if (null === $this->pCasFactory) {
-        $this->pCasFactory = $this->container->get('pcas.pcas_factory');
-      }
+        if (null === $this->pCasFactory) {
+            $this->pCasFactory = $this->container->get('pcas.pcas_factory');
+        }
 
-      return $this->pCasFactory;
+        return $this->pCasFactory;
     }
 
   /**

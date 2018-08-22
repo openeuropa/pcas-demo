@@ -11,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * @todo: Fix complexity warning.
+ * @SuppressWarnings(PHPMD)
+ */
 class LoginController extends Controller
 {
     /**
@@ -37,7 +41,6 @@ class LoginController extends Controller
                 ))
                 ->add('submit', SubmitType::class, array('label' => 'Submit'))
                 ->getForm();
-
         } else {
             $form = $this->createFormBuilder()
                 ->add('password', PasswordType::class)
@@ -127,5 +130,4 @@ class LoginController extends Controller
 
         return $return;
     }
-
 }
